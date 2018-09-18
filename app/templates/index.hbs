@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card text-center">
+				<div class="card-body">
+					<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+						<h1 class="display-4"> Le Etoile ⭐️</h1>
+						<p class="lead"> A Learning Manager!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="album py-5">
+
+	<div class="container">
+		<div class="row">
+			<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+				<h3 class="display-6"> Work In Progress: </h3>
+				{{#each model as |task|}}
+					{{#if (eq task.status "DOING")}}
+            <p class="lead"> {{task.title}} <span class="badge badge-primary">En Progreso</span> </p>
+					{{/if}}
+				{{/each}}
+
+				<h3 class="display-6"> Backlog: </h3>
+				{{#each model as |task|}}
+					{{#if (eq task.status "TODO")}}
+            <p class="lead"> {{task.title}} <span class="badge badge-secondary">Por Hacer</span> </p>
+					{{/if}}
+				{{/each}}
+
+				<h3 class="display-6"> Tasks Finished: </h3>
+				{{#each model as |task|}}
+					{{#if (eq task.status "DONE")}}
+            <p class="lead"> {{task.title}} <span class="badge badge-success"> Hecha </span> </p>
+					{{/if}}
+				{{/each}}
+			</div>
+		</div>
+	</div>
+
+</div>
